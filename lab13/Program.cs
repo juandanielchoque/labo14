@@ -29,11 +29,12 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // 5. Configurar el pipeline de HTTP
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// ASÍ DEBE QUEDAR (Saca las llaves del if)
+// if (app.Environment.IsDevelopment())  <-- Puedes comentar o borrar el if
+// {
+app.UseSwagger();
+app.UseSwaggerUI();
+// }
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
